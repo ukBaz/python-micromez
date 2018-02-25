@@ -1,0 +1,29 @@
+language: python
+sudo: required
+
+# look at https://github.com/pypa/pip for examples?
+# https://docs.travis-ci.com/user/multi-os/
+python:
+  - "3.6"
+  - "3.5"
+before_install:
+  #
+install:
+  # - pip install --upgrade pip
+  - pip install pycodestyle
+  - pip install 'coverage>4.0,<4.4'
+  - pip install codecov
+  #
+before_script:
+  #
+script:
+  - pycodestyle -v micromez/*.py
+  - pycodestyle -v examples
+  - pycodestyle -v micromez/fonts/font_builder.py
+  - coverage run -m unittest -v tests.test_outputs
+  - coverage run --append -m unittest -v tests.test_inputs
+  - coverage run --append -m unittest -v tests.test_examples
+
+after_success:
+  #
+  - codecov
