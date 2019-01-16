@@ -312,7 +312,7 @@ class Button:
     def when_pressed(self):
         """
         The function to run when the button is pressed.
-        
+
         :param callback: Python to be executed when button pressed
         """
         pass
