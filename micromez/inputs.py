@@ -281,6 +281,8 @@ class Lp3990:
 class Button:
     """
     Accessing the Buttons
+
+    :param btn: Required button (A, B, C or D)
     """
     def __init__(self, btn):
         btn_to_pin = {'A': 33,
@@ -298,13 +300,23 @@ class Button:
 
     @property
     def is_pressed(self):
+        """
+        Get state of button
+
+        :return: ``True`` if the button is currently pressed otherwise
+                 ``False``
+        """
         return not self._btn.read()
 
     @property
     def when_pressed(self):
+        """
+        The function to run when the button is pressed.
+        
+        :param callback: Python to be executed when button pressed
+        """
         pass
 
     @when_pressed.setter
     def when_pressed(self, callback):
-        # print('When pressed', callback)
         self._btn.isr(mraa.EDGE_FALLING, callback, None)
