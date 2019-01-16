@@ -135,10 +135,8 @@ class OLED96:
     def scroll_text(self, horizontal=None, vertical=None):
         """
         Scroll current content of display
-        :param horizontal:
-            Set to any value to scroll horizontally
-        :param vertical:
-            Currently not implemented
+        :param horizontal: Set to any value to scroll horizontally
+        :param vertical: Currently not implemented
         """
         if horizontal is not None and vertical is not None:
             self._send_command(0x29, 0x00, 0x00, 0x00, 0x07, 0x01, 0x2f)
@@ -205,16 +203,11 @@ class Grid:
     def draw_square(self, x_loc, y_loc, x_size, y_size, fill=True):
         """
         Create a square in the display buffer
-        :param x_loc:
-            The X origin of the square
-        :param y_loc:
-            The Y origin of the square
-        :param x_size:
-            The size of the square in X direction
-        :param y_size:
-            The size of the square in Y direction
-        :param fill:
-            Boolean of if pixels are on (True) or off (False)
+        :param x_loc: The X origin of the square
+        :param y_loc: The Y origin of the square
+        :param x_size: The size of the square in X direction
+        :param y_size: The size of the square in Y direction
+        :param fill: Boolean of if pixels are on (True) or off (False)
         """
         for x in range(x_loc, x_loc + x_size):
             for y in range(y_loc, y_loc + y_size):
