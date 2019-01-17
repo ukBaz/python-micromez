@@ -96,9 +96,9 @@ qthelp:
 	@echo
 	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
 	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/python-bluezero.qhcp"
+	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/python-micromez.qhcp"
 	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/python-bluezero.qhc"
+	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/python-micromez.qhc"
 
 .PHONY: applehelp
 applehelp:
@@ -115,8 +115,8 @@ devhelp:
 	@echo
 	@echo "Build finished."
 	@echo "To view the help file:"
-	@echo "# mkdir -p $$HOME/.local/share/devhelp/python-bluezero"
-	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/python-bluezero"
+	@echo "# mkdir -p $$HOME/.local/share/devhelp/python-micromez"
+	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/python-micromez"
 	@echo "# devhelp"
 
 .PHONY: epub

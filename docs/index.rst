@@ -1,6 +1,6 @@
 
 ====================================
-Welcome to Bluezero's documentation!
+Welcome to micromez's documentation!
 ====================================
 
 Overview
@@ -15,7 +15,7 @@ Examples
 .. toctree::
    examples
 
-python-bluezero modules
+python-micromez modules
 ***********************
 
 .. toctree::
