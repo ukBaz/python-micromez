@@ -20,3 +20,9 @@ python-micromez modules
 
 .. toctree::
    api_modules
+
+Developer Documentation
+***********************
+
+.. toctree::
+   developer
