@@ -1,13 +1,17 @@
+Overview
+========
+This is the Python library to support the micromez add-on board that is part of the 96Boards Mezzanine Community effort:
+https://github.com/96boards/mezzanine-community/tree/master/boards/other/micromez
 
-sudo apt-get install python3-pip
-sudo pip3 install setuptools
-sudo pip3 install freetype-py
-sudo apt-get install libfreetype6-dev
-./font_to_py.py /usr/share/fonts/opentype/ipafont-gothic/ipag.ttf 16 myfont.py
+Documentation
+=============
+https://micromez.readthedocs.io/en/latest/overview.html
 
 
 Building mraa
 =============
+This library has a dependancy on the mraa GPIO library which can be installed with Python bindings as follows:
+```
 sudo apt-get install git build-essential swig3.0 python3-dev nodejs-dev cmake libjson-c-dev
 
 git clone https://github.com/intel-iot-devkit/mraa.git
@@ -24,28 +28,15 @@ cmake -DBUILDSWIG=ON \
 make
 
 sudo make install
-
-```python
-from time import sleep
-import mraa
-cs_pin = mraa.Gpio(12)
-cs_pin.dir(mraa.DIR_OUT)
-dev = mraa.Spi(0)
-
-txbuf = bytearray([0x01, 0x80, 0x00])
-
-while True:
-    cs_pin.write(False)
-    rxbuf = dev.write(txbuf)
-    cs_pin.write(True)
-    print(rxbuf)
-    # print(struct.unpack(">H", rxbuf[1:]))
-    print(((rxbuf[1] & 0x03) << 8) | rxbuf[2])
-    sleep(1)
 ```
 
-sudo apt-get install python-dev python3-dev
+Load additional Fonts
+=====================
+If more fonts are required in addition to the three provided, the following will need to be done:
+```
 sudo apt-get install python3-pip
-
-sudo pip3 install spidev
-
+sudo pip3 install setuptools
+sudo pip3 install freetype-py
+sudo apt-get install libfreetype6-dev
+./font_to_py.py /usr/share/fonts/opentype/ipafont-gothic/ipag.ttf 16 myfont.py
+```
