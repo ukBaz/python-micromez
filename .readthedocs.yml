@@ -6,9 +6,6 @@ version: 2
 sphinx:
   configuration: docs/conf.py
 
-formats:
-  - epub
-
 build:
   image: latest
 
