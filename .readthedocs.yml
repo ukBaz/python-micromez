@@ -1,7 +1,21 @@
 # .readthedocs.yml
+# Required
+version: 2
+
+# Build documentation in the docs/ directory with Sphinx
+sphinx:
+  configuration: docs/conf.py
+
+formats:
+  - epub
 
 build:
   image: latest
 
 python:
   version: 3.6
+  install:
+    - method: pip
+      path: .
+      extra_requirements:
+        - docs
