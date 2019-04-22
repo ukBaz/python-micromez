@@ -15,7 +15,7 @@ here = path.abspath(path.dirname(__file__))
 
 required_packages = []
 
-extras_rel = ['bumpversion', 'twine']
+extras_rel = ['bumpversion', 'twine', 'wheel', 'setuptools']
 extras_doc = ['sphinx', 'sphinx_rtd_theme']
 extras_test = ['coverage', 'pycodestyle']
 extras_dev = extras_rel + extras_doc + extras_test + ['freetype-py']
